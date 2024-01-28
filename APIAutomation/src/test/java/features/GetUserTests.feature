@@ -8,7 +8,8 @@ Feature: Validation of Get Users API
 
   Scenario: Validate User details using Get Users API
   When call Users API with user id as "2"
-  Then status code is 200, first-name of user is "Janet" and email is "janet.weaver@reqres.in"
+  Then status code is 200
+  And first-name of user is "Janet" and email is "janet.weaver@reqres.in"
   
 
 	Scenario: Validate User not found for Invalid user

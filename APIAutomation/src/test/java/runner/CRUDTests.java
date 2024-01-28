@@ -5,11 +5,10 @@ import org.testng.annotations.Test;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features={"src//test//java//features//GetUserTests.feature"},glue={"stepdefinations"}
+@CucumberOptions(features={"src//test//java//features//CRUDTests.feature"},glue={"stepdefinations"}
 ,plugin={"pretty","html:target/cucumber"})
 
 @Test
-public class GetUserTests extends AbstractTestNGCucumberTests{
-	
-	
+public class CRUDTests extends AbstractTestNGCucumberTests{
+
 }
