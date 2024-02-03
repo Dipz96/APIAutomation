@@ -92,10 +92,11 @@ public class TestMethods {
 	
 	@When("Update Users API using {string}")
 	public void update_users_api(String httpMethod) {
+		String id= Utilities.getupdatedValues("UserID");
 		if(httpMethod.equals("PUT"))
-			res=given().spec(reqspec).when().put().then().spec(resspec).log().all().extract().response();
+			res=given().spec(reqspec).when().put("/"+id).then().spec(resspec).log().all().extract().response();
 		else
-			res=given().spec(reqspec).when().patch().then().spec(resspec).log().all().extract().response();
+			res=given().spec(reqspec).when().patch("/"+id).then().spec(resspec).log().all().extract().response();
 	}
 	
 	@When("Delete Users API")
@@ -106,7 +107,38 @@ public class TestMethods {
 		res=given().spec(reqspec).when().delete("/"+id).then().log().all().extract().response();
 	}
 	
+	@When("call Resources API")
+	public void call_resources_api() {
+		 reqspec=new RequestSpecBuilder().setBaseUri(baseURL+"/unknown").build();	
+	     resspec=new ResponseSpecBuilder().expectContentType(ContentType.JSON).build();
+			
+	     res=given().spec(reqspec).when().get().then().spec(resspec).extract().response();
+	}
+
+	@When("call Resources API with id as {string}")
+	public void call_resources_api_with_id_as(String id) {
+		reqspec=new RequestSpecBuilder().setBaseUri(baseURL+"/unknown/"+id).build();
+	     resspec=new ResponseSpecBuilder().expectContentType(ContentType.JSON).build();
+			
+	     res=given().spec(reqspec).when().get().then().spec(resspec).extract().response();
+	}
+
+	@Then("Name of user is {string}, id is {int} and year is {int}")
+	public void name_of_user_is_id_is_and_year_is(String name, int id, int year) {
+		String response=res.asString();
+		JsonPath js=new JsonPath(response);
+		int actualID=js.getInt("data.id");
+		String actualName=js.get("data.name");
+		int actualYear=js.getInt("data.year");
+		assertEquals(actualID, id,"ID is not as expected");
+		assertEquals(actualName, name,"Name is not as expected");
+		assertEquals(actualYear, year,"Year is not as expected");
+	}
+
 	
+
+
+
 
 	
 }
