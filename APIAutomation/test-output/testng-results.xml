@@ -1,79 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-03T13:25:26 IST" name="Default suite" finished-at="2024-02-03T13:25:38 IST" duration-ms="11403">
+  <suite started-at="2024-02-04T16:09:49 IST" name="Default suite" finished-at="2024-02-04T16:09:56 IST" duration-ms="6429">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.GetResourceTests@19e4653c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RegistrationAndLoginTests@19e4653c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-02-03T13:25:26 IST" name="Default test" finished-at="2024-02-03T13:25:38 IST" duration-ms="11403">
-      <class name="runner.GetResourceTests">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.GetResourceTests@19e4653c]" started-at="2024-02-03T13:25:26 IST" name="setUpClass" finished-at="2024-02-03T13:25:27 IST" duration-ms="872" status="PASS">
+    <test started-at="2024-02-04T16:09:49 IST" name="Default test" finished-at="2024-02-04T16:09:56 IST" duration-ms="6429">
+      <class name="runner.RegistrationAndLoginTests">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.RegistrationAndLoginTests@19e4653c]" started-at="2024-02-04T16:09:49 IST" name="setUpClass" finished-at="2024-02-04T16:09:50 IST" duration-ms="864" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@4c063cb9]]>
+                <![CDATA[org.testng.TestRunner@46ea78f0]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.GetResourceTests@19e4653c]" started-at="2024-02-03T13:25:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-03T13:25:31 IST" duration-ms="4224" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RegistrationAndLoginTests@19e4653c]" started-at="2024-02-04T16:09:50 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-04T16:09:54 IST" duration-ms="4206" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validate Getting All Resources"]]>
+                <![CDATA["Validate Registration of User without password"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validation of Get Resources API"]]>
+                <![CDATA["Validation of Registration and Login of Users using API"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.GetResourceTests@19e4653c]" started-at="2024-02-03T13:25:31 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-03T13:25:36 IST" duration-ms="4178" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RegistrationAndLoginTests@19e4653c]" started-at="2024-02-04T16:09:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-04T16:09:55 IST" duration-ms="407" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validate Resource details using Get Resources API"]]>
+                <![CDATA["Validate Registration of User"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validation of Get Resources API"]]>
+                <![CDATA["Validation of Registration and Login of Users using API"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.GetResourceTests@19e4653c]" started-at="2024-02-03T13:25:36 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-03T13:25:38 IST" duration-ms="1997" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RegistrationAndLoginTests@19e4653c]" started-at="2024-02-04T16:09:55 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-04T16:09:55 IST" duration-ms="399" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validate Resource not found for Invalid Resource id"]]>
+                <![CDATA["Validate Login of User"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validation of Get Resources API"]]>
+                <![CDATA["Validation of Registration and Login of Users using API"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.GetResourceTests@19e4653c]" started-at="2024-02-03T13:25:38 IST" name="tearDownClass" finished-at="2024-02-03T13:25:38 IST" duration-ms="48" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RegistrationAndLoginTests@19e4653c]" started-at="2024-02-04T16:09:55 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-04T16:09:56 IST" duration-ms="423" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate Login of User without password"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validation of Registration and Login of Users using API"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.RegistrationAndLoginTests@19e4653c]" started-at="2024-02-04T16:09:56 IST" name="tearDownClass" finished-at="2024-02-04T16:09:56 IST" duration-ms="40" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- runner.GetResourceTests -->
+      </class> <!-- runner.RegistrationAndLoginTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -14,6 +14,9 @@ import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.*;
 import static org.testng.Assert.assertEquals;
+
+import org.testng.Assert;
+
 import APIUtilities.Utilities;
 
 
@@ -136,9 +139,34 @@ public class TestMethods {
 	}
 
 	
+	@Given("Email as {string} and Password as {string}")
+	public void email_as_and_password_as(String email, String pwd) {
+		reqspec=new RequestSpecBuilder().setBaseUri(baseURL).setContentType(ContentType.JSON).setBody(Utilities.getRegisterJson(email,pwd)).build();	
+		resspec=new ResponseSpecBuilder().expectContentType(ContentType.JSON).build();
+    }
+
+	@When("call Register API")
+	public void call_register_api() {
+		res=given().log().all().spec(reqspec).when().post("/register").then().log().all().spec(resspec).extract().response();
+	}
 
 
+	@Then("error as {string}")
+	public void error_as(String errorMsg) {
+		String response=res.asString();
+		JsonPath js=new JsonPath(response);
+		String actualError=js.getString("error");
+		Assert.assertEquals(actualError, errorMsg,"Expected Error Message is not returned by API");
+	}
 
+
+	@When("call Login API")
+	public void call_login_api() {
+
+		res=given().log().all().spec(reqspec).when().post("/login").then().log().all().spec(resspec).extract().response();
+	}
+
+	
 
 	
 }

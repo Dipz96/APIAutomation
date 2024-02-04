@@ -1,6 +1,7 @@
 package APIUtilities;
 
 import java.lang.reflect.Field;
+import java.util.Random;
 
 public class Utilities {
 	
@@ -13,6 +14,20 @@ public class Utilities {
 				+ "    \"job\": \""+job+"\"\r\n"
 				+ "}";
 	}
+	
+	public static String getRegisterJson(String email,String pwd)
+	{
+		if(pwd.equals(""))
+			return "{\r\n"
+					+ "    \"email\": \""+email+"\"\r\n"
+					+ "}";
+		
+		return "{\r\n"
+				+ "    \"email\": \""+email+"\",\r\n"
+				+ "    \"password\": \""+pwd+"\"\r\n"
+				+ "}";
+	}
+	
 	
 	public static void updateVariables(String id)
 	{
